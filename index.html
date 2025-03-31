@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo tú 💖</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f4e1;
+            margin: 0;
+            font-family: cursive;
+        }
+
+        .contenedor {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .sobre {
+            width: 300px;
+            height: 200px;
+            background-color: #c0392b;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .solapa {
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-bottom: 100px solid #e74c3c;
+            transition: transform 0.5s ease;
+            transform-origin: top;
+        }
+
+        .mensaje {
+            position: absolute;
+            width: 280px;
+            height: 250px;
+            background: white;
+            color: black;
+            font-size: 20px;
+            padding: 20px;
+            overflow-y: auto;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .gif {
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        .abierto .solapa {
+            transform: rotateX(180deg);
+        }
+
+        .abierto .mensaje {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor" onclick="abrirSobre()">
+        <div class="solapa"></div>
+        <div class="sobre">
+            📩 Para: Mi hermosa 💖
+        </div>
+        <div class="mensaje" id="mensaje">
+            Hola hermosa... 💕 <br><br>
+            Hoy fue otro día increíble contigo ✨<br>
+            Gracias por apoyarme, por estar ahí y hacerme tan feliz...<br><br>
+            Te amo y te adoro. Se han pasado tan rápido estos cuatro meses,  
+            pero juraría que te conozco de una vida. 💫<br><br>
+            Esta semana pasó tan rápido que perdí la noción de qué día era, mi amor.  
+            Pero te preparé este pequeño mensaje para recordarte lo especial que eres para mí.  
+            ❤️💖💋
+            
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3FncWxsMXRodXBsazVicmhhNHQ2MjYwYzNydzRubnFyaHY2aDN0ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlGRDhPTqVEvhCw/giphy.gif" 
+                 alt="GIF de amor" class="gif">
+        </div>
+    </div>
+
+    <script>
+        function abrirSobre() {
+            let contenedor = document.querySelector('.contenedor');
+            contenedor.classList.toggle('abierto');
+        }
+    </script>
+
+</body>
+</html>
